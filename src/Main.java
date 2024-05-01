@@ -18,17 +18,16 @@ class Main {
 
         System.out.print("Source: ");
         String source = Input.getString("No english word matches your input!", input -> {
-            if (englishWordMap.get(input) == null) return false;
-            return true;
+            return !(englishWordMap.get(input) == null);
         });
 
         System.out.print("Target: ");
         String target = Input.getString("No english word matches your input!", input -> {
-            if (englishWordMap.get(input) == null) return false;
-            return true;
+            return !(englishWordMap.get(input) == null);
         });
 
-        System.out.println("Algo (1/2/3): ");
+        System.out.println("1. BFS\n2. GBFS\n3. A*");
+        System.out.println("Algorithm (1/2/3) : ");
         Integer algorithm = Input.getInt();
         
         Solver s;
@@ -36,8 +35,11 @@ class Main {
             case 1:
                 s = new BFS(englishWordMap);
                 break;
-            default:
+            case 2:
                 s = new GBFS(englishWordMap);
+                break;
+            default:
+                s = new AStar(englishWordMap);
                 break;
         }
 

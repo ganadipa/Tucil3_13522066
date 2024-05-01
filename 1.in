@@ -1,0 +1,1251 @@
+Word ladder solver!
+Source: Target: 1. BFS
+2. GBFS
+3. A*
+Algorithm (1/2/3) : 
+From aaa to aaa
+0
+3
+From aaa to baa
+1
+3
+From aaa to naa
+1
+3
+From aaa to saa
+1
+3
+From aaa to taa
+1
+3
+From aaa to aba
+1
+3
+From aaa to ada
+1
+3
+From aaa to aga
+1
+3
+From aaa to aha
+1
+3
+From aaa to aka
+1
+3
+From aaa to ala
+1
+3
+From aaa to ama
+1
+3
+From aaa to ana
+1
+3
+From aaa to apa
+1
+3
+From aaa to ara
+1
+3
+From aaa to asa
+1
+3
+From aaa to ata
+1
+3
+From aaa to ava
+1
+3
+From aaa to awa
+1
+3
+From aaa to aah
+1
+3
+From aaa to aal
+1
+3
+From aaa to aam
+1
+3
+From aaa to aas
+1
+3
+From aah to bah
+2
+3
+From aah to dah
+2
+3
+From aah to hah
+2
+3
+From aah to jah
+2
+3
+From aah to lah
+2
+3
+From aah to mah
+2
+3
+From aah to pah
+2
+3
+From aah to rah
+2
+3
+From aah to sah
+2
+3
+From aah to wah
+2
+3
+From aah to yah
+2
+3
+From aah to ach
+2
+2
+From aah to aph
+2
+3
+From aah to ash
+2
+3
+From aah to auh
+2
+3
+From aal to bal
+2
+3
+From aal to cal
+2
+3
+From aal to dal
+2
+3
+From aal to gal
+2
+3
+From aal to hal
+2
+3
+From aal to kal
+2
+3
+From aal to mal
+2
+3
+From aal to pal
+2
+3
+From aal to sal
+2
+3
+From aal to tal
+2
+3
+From aal to val
+2
+3
+From aal to abl
+2
+3
+From aal to ail
+2
+3
+From aal to all
+2
+3
+From aal to apl
+2
+3
+From aal to aul
+2
+3
+From aal to awl
+2
+3
+From aam to bam
+2
+3
+From aam to cam
+2
+3
+From aam to dam
+2
+3
+From aam to eam
+2
+2
+From aam to fam
+2
+3
+From aam to gam
+2
+3
+From aam to ham
+2
+3
+From aam to jam
+2
+3
+From aam to kam
+2
+3
+From aam to lam
+2
+3
+From aam to mam
+2
+3
+From aam to nam
+2
+3
+From aam to oam
+2
+3
+From aam to pam
+2
+3
+From aam to ram
+2
+3
+From aam to sam
+2
+3
+From aam to tam
+2
+3
+From aam to yam
+2
+3
+From aam to adm
+2
+3
+From aam to aim
+2
+3
+From aam to arm
+2
+3
+From aam to atm
+2
+3
+From aam to aum
+2
+3
+From aam to awm
+2
+3
+From aas to bas
+2
+3
+From aas to das
+2
+3
+From aas to fas
+2
+3
+From aas to gas
+2
+3
+From aas to has
+2
+3
+From aas to kas
+2
+3
+From aas to las
+2
+3
+From aas to mas
+2
+3
+From aas to pas
+2
+3
+From aas to ras
+2
+3
+From aas to tas
+2
+3
+From aas to vas
+2
+3
+From aas to was
+2
+3
+From aas to yas
+2
+3
+From aas to abs
+2
+3
+From aas to ads
+2
+3
+From aas to aes
+2
+3
+From aas to ahs
+2
+3
+From aas to ais
+2
+3
+From aas to als
+2
+3
+From aas to ans
+2
+3
+From aas to ars
+2
+3
+From aas to ass
+2
+3
+From aas to aus
+2
+3
+From aas to ays
+2
+3
+From aba to iba
+2
+3
+From aba to oba
+2
+3
+From aba to abb
+2
+3
+From aba to abc
+2
+3
+From aba to abd
+2
+3
+From aba to abe
+2
+3
+From aba to abn
+2
+3
+From aba to abo
+2
+2
+From aba to abp
+2
+3
+From aba to abr
+2
+3
+From aba to abt
+2
+3
+From aba to abu
+2
+3
+From aba to abv
+2
+3
+From aba to aby
+2
+3
+From abo to ibo
+3
+2
+From abo to ado
+3
+2
+From abo to ago
+3
+2
+From abo to aho
+3
+2
+From abo to ako
+3
+2
+From abo to alo
+3
+2
+From abo to aro
+3
+2
+From abo to avo
+3
+2
+From abo to azo
+3
+2
+From ach to bch
+3
+2
+From ach to ich
+3
+2
+From ach to och
+3
+2
+From ach to sch
+3
+2
+From ach to tch
+3
+2
+From ach to acc
+3
+2
+From ach to ace
+3
+2
+From ach to ack
+3
+2
+From ach to act
+3
+2
+From ach to acy
+3
+2
+From ada to ida
+2
+3
+From ada to oda
+2
+3
+From ada to adc
+2
+3
+From ada to add
+2
+3
+From ada to ade
+2
+3
+From ada to adj
+2
+3
+From ada to adp
+2
+3
+From ada to adv
+2
+3
+From ada to ady
+2
+3
+From ada to adz
+2
+3
+From aga to age
+2
+3
+From aga to agr
+2
+3
+From aga to agt
+2
+3
+From aga to agy
+2
+3
+From aha to cha
+2
+3
+From aha to dha
+2
+3
+From aha to kha
+2
+3
+From aha to rha
+2
+3
+From aha to sha
+2
+3
+From aha to tha
+2
+3
+From aha to wha
+2
+3
+From aha to ahi
+2
+3
+From aha to aht
+2
+3
+From aha to ahu
+2
+3
+From aka to oka
+2
+3
+From aka to ake
+2
+3
+From aka to aku
+2
+3
+From ala to ela
+2
+2
+From ala to ila
+2
+3
+From ala to ola
+2
+3
+From ala to sla
+2
+3
+From ala to ula
+2
+3
+From ala to alb
+2
+3
+From ala to alc
+2
+3
+From ala to ald
+2
+3
+From ala to ale
+2
+3
+From ala to alf
+2
+3
+From ala to alg
+2
+3
+From ala to alk
+2
+3
+From ala to aln
+2
+3
+From ala to alp
+2
+3
+From ala to alt
+2
+3
+From ala to alw
+2
+3
+From ala to aly
+2
+3
+From ama to ima
+2
+3
+From ama to sma
+2
+3
+From ama to amb
+2
+3
+From ama to ame
+2
+3
+From ama to ami
+2
+3
+From ama to amp
+2
+3
+From ama to amt
+2
+3
+From ama to amu
+2
+3
+From ama to amy
+2
+3
+From ana to mna
+2
+3
+From ana to ona
+2
+3
+From ana to una
+2
+3
+From ana to anc
+2
+3
+From ana to and
+2
+3
+From ana to ane
+2
+3
+From ana to ani
+2
+3
+From ana to ann
+2
+3
+From ana to ant
+2
+3
+From ana to any
+2
+3
+From apa to epa
+2
+2
+From apa to opa
+2
+3
+From apa to ppa
+2
+3
+From apa to spa
+2
+3
+From apa to ape
+2
+3
+From apa to app
+2
+3
+From apa to apr
+2
+3
+From apa to apt
+2
+3
+From apa to apx
+2
+3
+From ara to bra
+2
+3
+From ara to era
+2
+2
+From ara to fra
+2
+3
+From ara to gra
+2
+3
+From ara to ira
+2
+3
+From ara to kra
+2
+3
+From ara to ora
+2
+3
+From ara to tra
+2
+3
+From ara to ura
+2
+3
+From ara to arb
+2
+3
+From ara to arc
+2
+3
+From ara to are
+2
+3
+From ara to arf
+2
+3
+From ara to arg
+2
+3
+From ara to ark
+2
+3
+From ara to arn
+2
+3
+From ara to arr
+2
+3
+From ara to art
+2
+3
+From ara to aru
+2
+3
+From ara to arx
+2
+3
+From ara to ary
+2
+3
+From asa to usa
+2
+3
+From asa to asb
+2
+3
+From asa to ase
+2
+3
+From asa to asg
+2
+3
+From asa to ask
+2
+3
+From asa to asp
+2
+3
+From asa to ast
+2
+3
+From ata to eta
+2
+2
+From ata to ita
+2
+3
+From ata to pta
+2
+3
+From ata to sta
+2
+3
+From ata to uta
+2
+3
+From ata to ate
+2
+3
+From ata to ati
+2
+3
+From ata to att
+2
+3
+From ava to eva
+2
+2
+From ava to iva
+2
+3
+From ava to ova
+2
+3
+From ava to uva
+2
+3
+From ava to ave
+2
+3
+From ava to avg
+2
+3
+From ava to avn
+2
+3
+From awa to hwa
+2
+3
+From awa to iwa
+2
+3
+From awa to mwa
+2
+3
+From awa to swa
+2
+3
+From awa to twa
+2
+3
+From awa to awd
+2
+3
+From awa to awe
+2
+3
+From awa to awk
+2
+3
+From awa to awn
+2
+3
+From baa to bea
+2
+3
+From baa to boa
+2
+3
+From baa to bab
+2
+3
+From baa to bac
+2
+3
+From baa to bad
+2
+3
+From baa to bae
+2
+3
+From baa to bag
+2
+3
+From baa to bai
+2
+3
+From baa to ban
+2
+3
+From baa to bap
+2
+3
+From baa to bar
+2
+3
+From baa to bat
+2
+3
+From baa to baw
+2
+3
+From baa to bay
+2
+3
+From eam to elm
+3
+2
+From eam to emm
+3
+2
+From eam to eom
+3
+2
+From eam to ead
+3
+2
+From eam to ean
+3
+2
+From eam to ear
+3
+2
+From eam to eat
+3
+2
+From eam to eau
+3
+2
+From ela to elb
+3
+2
+From ela to eld
+3
+2
+From ela to elf
+3
+2
+From ela to eli
+3
+2
+From ela to elk
+3
+2
+From ela to ell
+3
+2
+From ela to els
+3
+2
+From ela to elt
+3
+2
+From epa to epi
+3
+2
+From era to erd
+3
+2
+From era to ere
+3
+2
+From era to erf
+3
+2
+From era to erg
+3
+2
+From era to erk
+3
+2
+From era to ern
+3
+2
+From era to err
+3
+2
+From era to ers
+3
+2
+From eta to etc
+3
+2
+From eta to eth
+3
+2
+From eta to ety
+3
+2
+From eva to eve
+3
+2
+From eva to evg
+3
+2
+From naa to nea
+2
+3
+From naa to noa
+2
+3
+From naa to nab
+2
+3
+From naa to nad
+2
+3
+From naa to nae
+2
+3
+From naa to naf
+2
+3
+From naa to nag
+2
+3
+From naa to nak
+2
+3
+From naa to nan
+2
+3
+From naa to nap
+2
+3
+From naa to nar
+2
+3
+From naa to nat
+2
+3
+From naa to nav
+2
+3
+From naa to naw
+2
+3
+From naa to nay
+2
+3
+From saa to sea
+2
+3
+From saa to sia
+2
+3
+From saa to sab
+2
+3
+From saa to sac
+2
+3
+From saa to sad
+2
+3
+From saa to sae
+2
+3
+From saa to sag
+2
+3
+From saa to sai
+2
+3
+From saa to saj
+2
+3
+From saa to sak
+2
+3
+From saa to san
+2
+3
+From saa to sao
+2
+2
+From saa to sap
+2
+3
+From saa to sar
+2
+3
+From saa to sat
+2
+3
+From saa to sau
+2
+3
+From saa to sav
+2
+3
+From saa to saw
+2
+3
+From saa to sax
+2
+3
+From saa to say
+2
+3
+From sao to dao
+3
+2
+From sao to hao
+3
+2
+From sao to iao
+3
+2
+From sao to lao
+3
+2
+From sao to mao
+3
+2
+From sao to tao
+3
+2
+From sao to yao
+3
+2
+From sao to sho
+3
+2
+From taa to tea
+2
+3
+From taa to toa
+2
+3
+From taa to tua
+2
+3
+From taa to tab
+2
+3
+From taa to tad
+2
+3
+From taa to tae
+2
+3
+From taa to tag
+2
+3
+From taa to tai
+2
+3
+From taa to taj
+2
+3
+From taa to tan
+2
+3
+From taa to tap
+2
+3
+From taa to tar
+2
+3
+From taa to tat
+2
+3
+From taa to tau
+2
+3
+From taa to tav
+2
+3
+From taa to taw
+2
+3
+From taa to tax
+2
+3
+From taa to tay
+2
+3
+From abb to ebb
+3
+2
+From abb to obb
+3
+3
+From abb to afb
+3
+3
+From abb to aob
+3
+3
+From abc to ubc
+3
+3
+From abd to mbd
+3
+3
+From abd to afd
+3
+3
+From abd to aid
+3
+3
+From abd to aud
+3
+3
+From abe to obe
+3
+3
+From abe to axe
+3
+3
+From abe to aye
+3
+3
+From abl to bbl
+3
+3
+From abl to dbl
+3
+3
+From abl to obl
+3
+3
+From abn to ain
+3
+3
+From abr to aer
+3
+3
+From abr to air
+3
+3
+From abr to aor
+3
+3
+From abs to bbs
+3
+3
+From abs to lbs
+3
+3
+From abs to obs
+3
+3
+From abs to tbs
+3
+3
+From abt to aet
+3
+3
+From abt to aft
+3
+3
+From abt to ait
+3
+3
+From abu to ayu
+3
+3
+From abv to obv
+3
+3
+From ace to ice
+4
+2
+From ack to ock
+4
+2
+From ack to tck
+4
+2
+From act to jct
+4
+2
+From act to oct
+4
+2
+From act to pct
+4
+2
+From act to rct
+4
+2
+From act to sct
+4
+2
+From acy to fcy
+4
+2
+From acy to icy
+4
+2
+From add to odd
+3
+3
+From ade to bde
+3
+3
+From ade to ide
+3
+3
+From ade to ode
+3
+3
+From ado to edo
+3
+1
+From ado to ido
+3
+2
+From ado to udo
+3
+2
+From edo to eco
+4
+0
+From edo to ego
+4
+1
+aaa
+aba
+abo
+ado
+edo
+eco
+Total nodes visited: 59
