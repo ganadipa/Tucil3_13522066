@@ -98,8 +98,6 @@ public class GBFS implements Solver {
 
         solved = true;
         Collections.reverse(solution);
-
-        System.out.println(solution); 
     }
 
 

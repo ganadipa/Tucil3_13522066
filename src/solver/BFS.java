@@ -48,7 +48,7 @@ public class BFS implements Solver{
         // BFS-ing
         while (!q.isEmpty() && !found) {
 
-            System.out.println("Searching at depth: " + depth);
+            // System.out.println("Searching at depth: " + depth);
 
             Integer size = q.size();
             for (int i = 0; i < size && !found; i++) {
@@ -97,7 +97,6 @@ public class BFS implements Solver{
 
         solved = true;
         Collections.reverse(solution);
-        System.out.println(solution);
     }
 
     public boolean isSolved() {
