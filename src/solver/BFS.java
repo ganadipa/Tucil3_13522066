@@ -2,14 +2,18 @@ package solver;
 
 import java.util.*;
 
+
+/**
+ * This class is a solver for word ladder problem using BFS algorithm.
+ * where BFS stands for Breadth First Search.
+ */
 public class BFS implements Solver{
     private boolean solved;
     private String source;
     private String target;
     private List<String> solution;
     private Map<String, Boolean> englishWordsMap;
-
-    private Map<String, Integer> distance;
+    private Integer totalNodesVisited;
 
     public BFS(Map<String, Boolean> englishWordsMap) {
         solved = false;
@@ -20,6 +24,7 @@ public class BFS implements Solver{
     public void solve(String source, String target) throws Exception{
         solved = false;
         solution.clear();
+        totalNodesVisited = 0;
 
         // Check if source and target have the same length
         if (source.length() != target.length()) {
@@ -28,12 +33,9 @@ public class BFS implements Solver{
 
         this.source = source;
         this.target = target;
-
-        distance = new HashMap<String, Integer>();
         
         Queue<String> q = new LinkedList<String>();
         q.add(source);
-        distance.put(source, 0);
 
         // This variable will store the parent of each node
         Map<String, String> parent = new HashMap<String, String>();
@@ -45,31 +47,39 @@ public class BFS implements Solver{
 
         // BFS-ing
         while (!q.isEmpty() && !found) {
-            System.out.println("Searching at depth: " + ++depth);
+
+            System.out.println("Searching at depth: " + depth);
 
             Integer size = q.size();
             for (int i = 0; i < size && !found; i++) {
                 String current = q.poll();
+                totalNodesVisited++;
 
-                for (int j = 0; j < current.length() && !found; j++) {
+                if (current.equals(target)) {
+                    found = true;
+                    break;
+                }
+
+                for (int j = 0; j < current.length(); j++) {
                     if (current.charAt(j) == target.charAt(j)) {
                         continue;
                     }
 
-                    for (char c = 'a'; c <= 'z' && !found; c++) {
+                    for (char c = 'a'; c <= 'z'; c++) {
                         String next = current.substring(0, j) + c + current.substring(j + 1);
 
-                        if (englishWordsMap.containsKey(next) && !distance.containsKey(next)) {
+                        if (
+                            englishWordsMap.containsKey(next) && 
+                            !parent.containsKey(next)
+                        ) {
                             q.add(next);
                             parent.put(next, current);
-                            distance.put(next, depth + 1);
-                            if (target.equals(next)) {
-                                found = true;
-                            }
                         }
                     }
                 }
             }
+
+            depth++;
         }
 
         if (!found) {
@@ -78,24 +88,27 @@ public class BFS implements Solver{
 
         // Reconstruct the path
         String current = target;
-        while (current != null) {
+        while (current != source) {
             solution.add(current);
             current = parent.get(current);
         }
+        solution.add(source);
+
 
         solved = true;
         Collections.reverse(solution);
+        System.out.println(solution);
     }
 
     public boolean isSolved() {
         return solved;
     }
 
-    public List<String> getSolution() {
+    public List<String> getSolution() throws Exception {
         if (isSolved()) {
             return solution;
         } else {
-            return null;
+            throw new Exception("Solution not found!");
         }
     }
 
@@ -105,6 +118,10 @@ public class BFS implements Solver{
 
     public String getTarget() {
         return target;
+    }
+
+    public Integer getTotalNodesVisited() {
+        return totalNodesVisited;
     }
 
 }

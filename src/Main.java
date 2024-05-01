@@ -7,9 +7,6 @@ import java.util.Map;
 import solver.*;
 
 class Main {
-    public enum Algorithm {
-        UCS, GBFS, ASTAR
-    }
 
     private static String currentDirectory = System.getProperty("user.dir") + '/';
 
@@ -34,23 +31,23 @@ class Main {
         System.out.println("Algo (1/2/3): ");
         Integer algorithm = Input.getInt();
         
-        // TODO
+        Solver s;
         switch (algorithm) {
             case 1:
-                
+                s = new BFS(englishWordMap);
                 break;
-        
             default:
+                s = new GBFS(englishWordMap);
                 break;
         }
 
-        Solver s = new BFS(englishWordMap);
         try {
             s.solve(source, target);
+            s.getSolution().forEach(System.out::println);
+            System.out.println("Total nodes visited: " + s.getTotalNodesVisited());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        s.getSolution().forEach(System.out::println);
     }
 
 
