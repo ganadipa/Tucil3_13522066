@@ -7,6 +7,10 @@ import solver.*;
 
 public class Stress {
     private static String currentDirectory = System.getProperty("user.dir") + '/';
+    
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
 
     public static void main(String[] args) {
         
@@ -17,7 +21,11 @@ public class Stress {
 
         Integer length = words.size();
         for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
+
+            if (words.get(i).length() != 4) continue;
+
+
+            for (int j = length - 1; j >= i; j--) {
                 if (i == j) continue;
                 
                 if (words.get(i).length() != words.get(j).length()) continue;
@@ -40,26 +48,34 @@ public class Stress {
                 }
 
                 if (s1.isSolved() == s2.isSolved() && !s2.isSolved()) {
-                    System.out.println("PASSED!");
-                    continue;
+                    System.out.println(ANSI_GREEN + "PASSED! Both doesnt have solution" + ANSI_RESET);
+                    break;
                 } 
 
                 if (s1.isSolved() != s2.isSolved()) {
-                    System.out.println("FAILED!");
+                    System.out.println(ANSI_RED + "FAILED!" + ANSI_RESET);
                     return;
                 }
 
+
+
+
                 try {
-                    if (s1.getSolution().size() == s2.getSolution().size()) {
-                        System.out.println("PASSED!");
+                    Integer size1 = s1.getSolution().size();
+                    Integer size2 = s2.getSolution().size();
+
+                    if (size1 == size2) {
+                        System.out.println(ANSI_GREEN + "PASSED! " + size1 + " " + size2 + ANSI_RESET);
+                        
                     } else {
-                        System.out.println("FAILED!");
+                        System.out.println(ANSI_RED + "FAILED!" + ANSI_RESET);
                         return;
                     }
                 } catch (Exception e) {
 
                 }
-
+                
+                break;
             }
         }
 

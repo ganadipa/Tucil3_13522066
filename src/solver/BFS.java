@@ -14,6 +14,8 @@ public class BFS implements Solver{
     private List<String> solution;
     private Map<String, Boolean> englishWordsMap;
     private Integer totalNodesVisited;
+    private Long solveTime;
+
 
     public BFS(Map<String, Boolean> englishWordsMap) {
         solved = false;
@@ -30,6 +32,8 @@ public class BFS implements Solver{
         if (source.length() != target.length()) {
             throw new Exception("Source and target must have the same length");
         }
+
+        long currentTimeMillis = System.currentTimeMillis();
 
         this.source = source;
         this.target = target;
@@ -66,6 +70,8 @@ public class BFS implements Solver{
                     }
 
                     for (char c = 'a'; c <= 'z'; c++) {
+                        if (current.charAt(j) == c) continue;
+                        
                         String next = current.substring(0, j) + c + current.substring(j + 1);
 
                         if (
@@ -97,6 +103,7 @@ public class BFS implements Solver{
 
         solved = true;
         Collections.reverse(solution);
+        solveTime = System.currentTimeMillis() - currentTimeMillis;
     }
 
     public boolean isSolved() {
@@ -121,6 +128,10 @@ public class BFS implements Solver{
 
     public Integer getTotalNodesVisited() {
         return totalNodesVisited;
+    }
+
+    public Long getSolveTime() {
+        return solveTime;
     }
 
 }

@@ -15,6 +15,7 @@ public class AStar implements Solver {
     private List<String> solution;
     private Map<String, Boolean> englishWordsMap;
     private Integer totalNodesVisited;
+    private Long solveTime;
 
     public AStar(Map<String, Boolean> englishWordsMap) {
         solved = false;
@@ -31,6 +32,8 @@ public class AStar implements Solver {
         if (source.length() != target.length()) {
             throw new Exception("Source and target must have the same length");
         }
+
+        long currentTimeMillis = System.currentTimeMillis();
 
         this.source = source;
         this.target = target;
@@ -61,11 +64,12 @@ public class AStar implements Solver {
                 if (currentWord.charAt(i) == target.charAt(i)) continue;
 
                 for (char c = 'a'; c <= 'z'; c++) {
+                    if (currentWord.charAt(i) == c) continue;
                     String next = currentWord.substring(0, i) + c + currentWord.substring(i + 1);
 
                     if (englishWordsMap.containsKey(next)) {
                         Integer estimate = estimatedCostToGoal(next);
-                        Integer oldEvaluation = (distance.get(next) == null ? 0 : distance.get(next)) + estimate;
+                        Integer oldEvaluation = ((distance.get(next) == null ? 0 : distance.get(next))) + estimate;
                         Integer currentEvaluation = distance.get(currentWord) + 1 + estimate;
 
                         if (parent.containsKey(next) && oldEvaluation <= currentEvaluation) {
@@ -93,8 +97,8 @@ public class AStar implements Solver {
 
         solved = true;
         Collections.reverse(solution);
+        solveTime = System.currentTimeMillis() - currentTimeMillis;
     }
-
 
     private Integer estimatedCostToGoal(String word) {
         int count = 0;
@@ -131,5 +135,9 @@ public class AStar implements Solver {
 
     public Integer getTotalNodesVisited() {
         return totalNodesVisited;
+    }
+
+    public Long getSolveTime() {
+        return solveTime;
     }
 }

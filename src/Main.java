@@ -47,6 +47,7 @@ class Main {
             s.solve(source, target);
             s.getSolution().forEach(System.out::println);
             System.out.println("Total nodes visited: " + s.getTotalNodesVisited());
+            System.out.println("Solve time: " + s.getSolveTime() + " miliseconds.");
         } catch (Exception e) {
             e.printStackTrace();
         }

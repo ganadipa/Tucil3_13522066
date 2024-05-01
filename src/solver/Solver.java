@@ -9,4 +9,5 @@ public interface Solver {
     public String getSource();
     public String getTarget();
     public Integer getTotalNodesVisited();
+    public Long getSolveTime();
 }
