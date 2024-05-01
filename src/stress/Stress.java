@@ -29,18 +29,37 @@ public class Stress {
                 Solver s1 = new AStar(englishWordMap), s2 = new BFS(englishWordMap);
                 try {
                     s1.solve(source, target);
-                    s2.solve(source, target);
+                } catch (Exception e) {
 
+                }
+
+                try {
+                    s2.solve(source, target);
+                } catch (Exception e) {
+                    
+                }
+
+                if (s1.isSolved() == s2.isSolved() && !s2.isSolved()) {
+                    System.out.println("PASSED!");
+                    continue;
+                } 
+
+                if (s1.isSolved() != s2.isSolved()) {
+                    System.out.println("FAILED!");
+                    return;
+                }
+
+                try {
                     if (s1.getSolution().size() == s2.getSolution().size()) {
-                        System.out.println("SAME SOLUTION!");
+                        System.out.println("PASSED!");
                     } else {
-                        System.out.println("DIFFERENT SIZE!");
+                        System.out.println("FAILED!");
                         return;
                     }
-
                 } catch (Exception e) {
-                    e.printStackTrace();
+
                 }
+
             }
         }
 

@@ -63,9 +63,17 @@ public class AStar implements Solver {
                 for (char c = 'a'; c <= 'z'; c++) {
                     String next = currentWord.substring(0, i) + c + currentWord.substring(i + 1);
 
-                    if (englishWordsMap.containsKey(next) && !parent.containsKey(next)) {
+                    if (englishWordsMap.containsKey(next)) {
+                        Integer estimate = estimatedCostToGoal(next);
+                        Integer oldEvaluation = (distance.get(next) == null ? 0 : distance.get(next)) + estimate;
+                        Integer currentEvaluation = distance.get(currentWord) + 1 + estimate;
+
+                        if (parent.containsKey(next) && oldEvaluation <= currentEvaluation) {
+                            continue;
+                        }
+
                         distance.put(next, distance.get(currentWord) + 1);
-                        pq.add(new Node(next, distance.get(next) + estimatedCostToGoal(next)));
+                        pq.add(new Node(next, distance.get(next) + estimate));
                         parent.put(next, currentWord);
                     }
                 }
