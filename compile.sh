@@ -1,2 +1,2 @@
 # Compile Java code
-javac -d bin src/*.java src/*/*.java
+javac -d bin src/*.java src/*/*.java src/*/*/*.java

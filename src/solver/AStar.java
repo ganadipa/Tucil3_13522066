@@ -64,6 +64,7 @@ public class AStar implements Solver {
 
                 for (char c = 'a'; c <= 'z'; c++) {
                     if (currentWord.charAt(i) == c) continue;
+                    
                     String next = currentWord.substring(0, i) + c + currentWord.substring(i + 1);
 
                     if (englishWordsMap.containsKey(next)) {

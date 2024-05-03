@@ -33,8 +33,10 @@ public class BFS implements Solver{
             throw new Exception("Source and target must have the same length");
         }
 
+        // Record start time
         long currentTimeMillis = System.currentTimeMillis();
 
+        
         this.source = source;
         this.target = target;
         
@@ -73,7 +75,6 @@ public class BFS implements Solver{
                         
                         String next = current.substring(0, j) + c + current.substring(j + 1);
 
-
                         if (
                             englishWordsMap.containsKey(next) && 
                             !parent.containsKey(next)
@@ -94,7 +95,7 @@ public class BFS implements Solver{
 
         // Reconstruct the path
         String current = target;
-        while (current != source) {
+        while (!current.equals(source)) {
             solution.add(current);
             current = parent.get(current);
         }
