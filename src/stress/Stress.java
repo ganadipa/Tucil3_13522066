@@ -25,7 +25,7 @@ public class Stress {
             if (words.get(i).length() != 4) continue;
 
 
-            for (int j = length - 1; j >= i; j--) {
+            for (int j = length - i - 1; j >= 0; j--) {
                 if (i == j) continue;
                 
                 if (words.get(i).length() != words.get(j).length()) continue;

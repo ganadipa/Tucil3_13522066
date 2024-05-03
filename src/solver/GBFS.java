@@ -76,7 +76,6 @@ public class GBFS implements Solver {
             String currentWord = current.getWord();
 
             for (int i = 0; i < currentWord.length(); i++) {
-                if (currentWord.charAt(i) == target.charAt(i)) continue;
 
                 for (char c = 'a'; c <= 'z'; c++) {
                     String next = currentWord.substring(0, i) + c + currentWord.substring(i + 1);

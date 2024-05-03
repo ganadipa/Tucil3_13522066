@@ -61,7 +61,6 @@ public class AStar implements Solver {
             String currentWord = current.getWord();
 
             for (int i = 0; i < currentWord.length(); i++) {
-                if (currentWord.charAt(i) == target.charAt(i)) continue;
 
                 for (char c = 'a'; c <= 'z'; c++) {
                     if (currentWord.charAt(i) == c) continue;
@@ -69,6 +68,7 @@ public class AStar implements Solver {
 
                     if (englishWordsMap.containsKey(next)) {
                         Integer estimate = estimatedCostToGoal(next);
+
                         Integer oldEvaluation = ((distance.get(next) == null ? 0 : distance.get(next))) + estimate;
                         Integer currentEvaluation = distance.get(currentWord) + 1 + estimate;
 

@@ -55,24 +55,24 @@ public class BFS implements Solver{
             // System.out.println("Searching at depth: " + depth);
 
             Integer size = q.size();
-            for (int i = 0; i < size && !found; i++) {
+            for (int i = 0; i < size; i++) {
                 String current = q.poll();
                 totalNodesVisited++;
 
+
+                // If current is equals to target then just STOP!
                 if (current.equals(target)) {
                     found = true;
                     break;
                 }
 
                 for (int j = 0; j < current.length(); j++) {
-                    if (current.charAt(j) == target.charAt(j)) {
-                        continue;
-                    }
 
                     for (char c = 'a'; c <= 'z'; c++) {
                         if (current.charAt(j) == c) continue;
                         
                         String next = current.substring(0, j) + c + current.substring(j + 1);
+
 
                         if (
                             englishWordsMap.containsKey(next) && 
