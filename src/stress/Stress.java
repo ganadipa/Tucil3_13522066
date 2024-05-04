@@ -34,7 +34,7 @@ public class Stress {
                 String target = words.get(j);
                 System.out.print("Checking between " + source + " and " + target + ": ");
 
-                Solver s1 = new AStar(englishWordMap), s2 = new BFS(englishWordMap);
+                Solver s1 = new AStar(englishWordMap), s2 = new UCS(englishWordMap);
                 try {
                     s1.solve(source, target);
                 } catch (Exception e) {

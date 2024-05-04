@@ -72,7 +72,7 @@
             exportPanel.setForeground(Colors.green400);
             exportPanel.setBackground(Colors.green400);
             exportPanel.add(exportButton);
-            exportButton.addActionListener(e -> {
+            exportButton.addActionListener(e -> {   
                 fileChooser.setDialogTitle("Export hasil");
                 fileChooser.setSelectedFile(new File("output.txt"));
                 fileChooser.showSaveDialog(this);

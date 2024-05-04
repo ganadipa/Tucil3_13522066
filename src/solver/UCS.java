@@ -7,7 +7,7 @@ import java.util.*;
  * This class is a solver for word ladder problem using BFS algorithm.
  * where BFS stands for Breadth First Search.
  */
-public class BFS implements Solver{
+public class UCS implements Solver{
     private boolean solved;
     private String source;
     private String target;
@@ -17,7 +17,7 @@ public class BFS implements Solver{
     private Long solveTime;
 
 
-    public BFS(Map<String, Boolean> englishWordsMap) {
+    public UCS(Map<String, Boolean> englishWordsMap) {
         solved = false;
         this.englishWordsMap = englishWordsMap;
         solution = new ArrayList<String>();

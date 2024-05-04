@@ -103,7 +103,7 @@ class Main {
         Solver s;
         switch (algorithm) {
             case 1:
-                s = new BFS(englishWordMap);
+                s = new UCS(englishWordMap);
                 break;
             case 2:
                 s = new GBFS(englishWordMap);
