@@ -35,6 +35,46 @@ public class GBFS implements Solver {
     }
 
 
+
+    private Integer heuristic(String current){
+        int count = 0;
+        for (int i = 0; i < current.length(); i++) {
+            if (current.charAt(i) != target.charAt(i)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public boolean isSolved() {
+        return solved;
+    }
+
+    public List<String> getSolution() throws Exception {
+        if (isSolved()) {
+            return solution;
+        } else {
+            throw new Exception("Solution not found!");
+        }
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public Integer getTotalNodesVisited() {
+        return totalNodesVisited;
+    }
+
+    public Double getSolveTime() {
+        return solveTime;
+    }
+
+
     /**
      * Setup the solution.
      * 
@@ -106,44 +146,5 @@ public class GBFS implements Solver {
         solved = true;
         Collections.reverse(solution);
         solveTime = (System.nanoTime() - currentTimeNanos)/1000000.0;
-    }
-
-
-    private Integer heuristic(String current){
-        int count = 0;
-        for (int i = 0; i < current.length(); i++) {
-            if (current.charAt(i) != target.charAt(i)) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public boolean isSolved() {
-        return solved;
-    }
-
-    public List<String> getSolution() throws Exception {
-        if (isSolved()) {
-            return solution;
-        } else {
-            throw new Exception("Solution not found!");
-        }
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public String getTarget() {
-        return target;
-    }
-
-    public Integer getTotalNodesVisited() {
-        return totalNodesVisited;
-    }
-
-    public Double getSolveTime() {
-        return solveTime;
     }
 }

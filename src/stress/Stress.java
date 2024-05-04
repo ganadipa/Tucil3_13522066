@@ -22,7 +22,7 @@ public class Stress {
         Integer length = words.size();
         for (int i = 0; i < length; i++) {
 
-            if (words.get(i).length() != 4) continue;
+            if (words.get(i).length() >= 6) continue;
 
 
             for (int j = length - i - 1; j >= 0; j--) {

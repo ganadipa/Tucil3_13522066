@@ -7,7 +7,7 @@ import javax.swing.*;
 import GUI.component.InputField;
 import GUI.component.NormalButton;
 import GUI.component.RadioButton;
-import GUI.component.WordComparisonPanel;
+import GUI.component.WordComparison;
 import GUI.theme.Colors;
 import solver.UCS;
 import solver.AStar;
@@ -182,7 +182,7 @@ public class MainPanel extends JPanel {
 
         try {
             for (String word : s.getSolution()) {
-                WordComparisonPanel panel = new WordComparisonPanel(word, target);
+                WordComparison panel = new WordComparison(word, target);
                 panel.setPreferredSize(new Dimension(680, 30)); // Set a fixed height for each comparison panel
                 comparisonContainer.add(panel);
             }
