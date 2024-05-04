@@ -18,7 +18,7 @@ public class GBFS implements Solver {
     private List<String> solution;
     private Map<String, Boolean> englishWordsMap;
     private Integer totalNodesVisited;
-    private Long solveTime;
+    private Double solveTime;
 
     /**
      * Constructor
@@ -49,7 +49,7 @@ public class GBFS implements Solver {
             throw new Exception("Source and target must have the same length");
         }
 
-        long currentTimeMillis = System.currentTimeMillis();
+        long currentTimeNanos = System.nanoTime();
 
         this.source = source;
         this.target = target;
@@ -88,7 +88,7 @@ public class GBFS implements Solver {
         }
 
         if (!found) {
-            solveTime = System.currentTimeMillis() - currentTimeMillis;
+            solveTime = (System.nanoTime() - currentTimeNanos)/1000000.0;
             throw new Exception("Solution not found!");
         }
 
@@ -102,7 +102,7 @@ public class GBFS implements Solver {
 
         solved = true;
         Collections.reverse(solution);
-        solveTime = System.currentTimeMillis() - currentTimeMillis;
+        solveTime = (System.nanoTime() - currentTimeNanos)/1000000.0;
     }
 
 
@@ -140,7 +140,7 @@ public class GBFS implements Solver {
         return totalNodesVisited;
     }
 
-    public Long getSolveTime() {
+    public Double getSolveTime() {
         return solveTime;
     }
 }

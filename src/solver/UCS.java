@@ -14,13 +14,41 @@ public class UCS implements Solver{
     private List<String> solution;
     private Map<String, Boolean> englishWordsMap;
     private Integer totalNodesVisited;
-    private Long solveTime;
+    private Double solveTime;
 
 
     public UCS(Map<String, Boolean> englishWordsMap) {
         solved = false;
         this.englishWordsMap = englishWordsMap;
         solution = new ArrayList<String>();
+    }
+
+    public boolean isSolved() {
+        return solved;
+    }
+
+    public List<String> getSolution() throws Exception {
+        if (isSolved()) {
+            return solution;
+        } else {
+            throw new Exception("Solution not found!");
+        }
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public Integer getTotalNodesVisited() {
+        return totalNodesVisited;
+    }
+
+    public Double getSolveTime() {
+        return solveTime;
     }
 
     public void solve(String source, String target) throws Exception{
@@ -34,7 +62,7 @@ public class UCS implements Solver{
         }
 
         // Record start time
-        long currentTimeMillis = System.currentTimeMillis();
+        long currentTimeNanos = System.nanoTime();
 
         
         this.source = source;
@@ -90,7 +118,7 @@ public class UCS implements Solver{
         }
 
         if (!found) {
-            solveTime = System.currentTimeMillis() - currentTimeMillis;
+            solveTime = (System.nanoTime() - currentTimeNanos)/1000000.0;
             throw new Exception("Solution not found!");
         }
 
@@ -105,35 +133,8 @@ public class UCS implements Solver{
 
         solved = true;
         Collections.reverse(solution);
-        solveTime = System.currentTimeMillis() - currentTimeMillis;
+        solveTime = (System.nanoTime() - currentTimeNanos)/1000000.0;
     }
 
-    public boolean isSolved() {
-        return solved;
-    }
-
-    public List<String> getSolution() throws Exception {
-        if (isSolved()) {
-            return solution;
-        } else {
-            throw new Exception("Solution not found!");
-        }
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public String getTarget() {
-        return target;
-    }
-
-    public Integer getTotalNodesVisited() {
-        return totalNodesVisited;
-    }
-
-    public Long getSolveTime() {
-        return solveTime;
-    }
 
 }

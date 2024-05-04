@@ -16,27 +16,27 @@ public class InputField extends JTextField {
     private int outlineThickness = 2;
 
     public InputField() {
-        this(10); // Default columns
+        this(10);
     }
 
     public InputField(int columns) {
         super(columns);
         setCaretColor(Colors.green500);
-        setOpaque(false); // Necessary for custom painting
+        setOpaque(false);
         setForeground(textColor);
         setBackground(backgroundColor);
-        setBorder(BorderFactory.createEmptyBorder(7, 10, 7, 10)); // Add padding
+        setBorder(BorderFactory.createEmptyBorder(7, 10, 7, 10));
 
         addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                outlineColor = focusedColor; // Change outline color to focused color
+                outlineColor = focusedColor;
                 repaint();
             }
 
             @Override
             public void focusLost(FocusEvent e) {
-                outlineColor = Colors.green600; // Revert outline color
+                outlineColor = Colors.green600;
                 repaint();
             }
         });
