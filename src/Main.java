@@ -97,7 +97,7 @@ class Main {
         });
 
         System.out.println("1. BFS\n2. GBFS\n3. A*");
-        System.out.println("Algorithm (1/2/3) : ");
+        System.out.print("Algorithm (1/2/3) : ");
         Integer algorithm = Input.getInt("Input must be 1 - 3", input -> {
             return !(input > 3 || input < 0);
         });
@@ -115,18 +115,28 @@ class Main {
                 s = new GBFS(englishWordMap);
                 break;
             default:
+                assert algorithm == 3;
+
                 s = new AStar(englishWordMap);
                 break;
         }
 
         try {
             s.solve(source, target);
-            s.getSolution().forEach(System.out::println);
+            Integer solutionLength = s.getSolution().size();
+
+            for (int i = 0; i < solutionLength; i++) {
+                System.out.println((i + 1) + ". " + s.getSolution().get(i));
+            }
+
+
             System.out.println("Total nodes visited: " + s.getTotalNodesVisited());
             System.out.println("Solve time: " + s.getSolveTime() + " miliseconds.");
-            System.out.println("SOlution length: " + s.getSolution().size());
+            System.out.println("Solution length: " + solutionLength);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("No solution found.");
+            System.out.println("Total nodes visited: " + s.getTotalNodesVisited());
+            System.out.println("Solve time: " + s.getSolveTime() + " miliseconds.");
         }
     }
 }

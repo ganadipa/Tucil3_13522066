@@ -131,6 +131,10 @@ public class MainPanel extends JPanel {
     private void processWords() {
         String source = sourceInput.getText().trim().toLowerCase();
         String target = targetInput.getText().trim().toLowerCase();
+        if (source.length() != target.length()) {
+            JOptionPane.showMessageDialog(this, "Both words must have the same length.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         if (!source.isEmpty() && !target.isEmpty() && englishWordMap.containsKey(source) && englishWordMap.containsKey(target)) {
             String selectedAlgorithm = getSelectedAlgorithm();
@@ -153,7 +157,7 @@ public class MainPanel extends JPanel {
                 s.solve(source, target);
                 updateResult(source, target);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "No solution found.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "No solution found.\nTotal nodes visited: " + s.getTotalNodesVisited() + "\nExec time: " + s.getSolveTime() + " ms.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Both words must be in the dictionary and not empty.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -168,7 +172,7 @@ public class MainPanel extends JPanel {
                 return button.getText();
             }
         }
-        return null; // default or error handling
+        return null;
     }
     
 

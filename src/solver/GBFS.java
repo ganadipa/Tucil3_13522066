@@ -87,8 +87,10 @@ public class GBFS implements Solver {
             }
         }
 
-        if (!found) 
+        if (!found) {
+            solveTime = System.currentTimeMillis() - currentTimeMillis;
             throw new Exception("Solution not found!");
+        }
 
         // Reconstruct the path
         String current = target;

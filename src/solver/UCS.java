@@ -90,6 +90,7 @@ public class UCS implements Solver{
         }
 
         if (!found) {
+            solveTime = System.currentTimeMillis() - currentTimeMillis;
             throw new Exception("Solution not found!");
         }
 
