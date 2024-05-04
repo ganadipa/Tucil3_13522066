@@ -2,6 +2,7 @@ package solver;
 
 import java.util.*;
 
+
 /**
  * This class is a solver for word ladder problem using GBFS algorithm.
  * Where GBFS stands for Greedy Best First Search.
@@ -10,6 +11,8 @@ import java.util.*;
  * and my heuristic function is calculated based on how many minimum characters 
  * are needed to change the current node to the target node without the constraint
  * the process must be a valid english word.
+ * 
+ * This GBFS Implements variance of GBFS that always find a solution, even if it is not optimal!
  */
 public class GBFS implements Solver {
     private boolean solved;
