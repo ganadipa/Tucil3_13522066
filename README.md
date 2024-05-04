@@ -11,7 +11,7 @@ Program ini merupakan program GUI yang menyelesaikan permasalahan word ladder de
 
 <h2 id="feature">Fitur</h2>
 1. Program utama <a href=#run>Word Ladder SOlver</a> <br>
-2. Automasi perbandingan hasil BFS dan A* <a href="#test">(stress test)<a> <br>
+2. Automasi perbandingan hasil UCS dan A* <a href="#test">(stress test)<a> <br>
 
 ### Requirement
 
