@@ -2,7 +2,6 @@ package GUI.panel;
 
 import java.awt.*;
 import java.util.*;
-import java.util.List;
 
 import javax.swing.*;
 import GUI.component.InputField;
@@ -130,8 +129,8 @@ public class MainPanel extends JPanel {
     }
 
     private void processWords() {
-        String source = sourceInput.getText().trim();
-        String target = targetInput.getText().trim();
+        String source = sourceInput.getText().trim().toLowerCase();
+        String target = targetInput.getText().trim().toLowerCase();
         
         if (!source.isEmpty() && !target.isEmpty() && englishWordMap.containsKey(source) && englishWordMap.containsKey(target)) {
             String selectedAlgorithm = getSelectedAlgorithm();

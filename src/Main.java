@@ -29,10 +29,10 @@ class Main {
 
         System.out.println("Do you want to use CLI or GUI ?");
         String choice = Input.getString("Input must be either CLI or GUI!", input -> {
-            return (input.equals("CLI") || input.equals("GUI"));
+            return (input.equalsIgnoreCase("CLI") || input.equalsIgnoreCase("GUI"));
         });
 
-        if (choice.equals("CLI")) runCLI();
+        if (choice.equalsIgnoreCase("CLI")) runCLI();
         else runGUI();
     }
 
@@ -88,17 +88,23 @@ class Main {
     private static void runCLI() {
         System.out.print("Source: ");
         String source = Input.getString("No english word matches your input!", input -> {
-            return !(englishWordMap.get(input) == null);
+            return !(englishWordMap.get(input.toLowerCase()) == null);
         });
 
         System.out.print("Target: ");
         String target = Input.getString("No english word matches your input!", input -> {
-            return !(englishWordMap.get(input) == null);
+            return !(englishWordMap.get(input.toLowerCase()) == null);
         });
 
         System.out.println("1. BFS\n2. GBFS\n3. A*");
         System.out.println("Algorithm (1/2/3) : ");
-        Integer algorithm = Input.getInt();
+        Integer algorithm = Input.getInt("Input must be 1 - 3", input -> {
+            return !(input > 3 || input < 0);
+        });
+
+        source = source.toLowerCase();
+        target = target.toLowerCase();
+
         
         Solver s;
         switch (algorithm) {
