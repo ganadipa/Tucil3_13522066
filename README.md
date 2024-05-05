@@ -1,4 +1,4 @@
-# Tugas kecil 2 Strategi Algoritma: Bezier Curve.
+# Tugas kecil 3 Strategi Algoritma: Word Ladder Solver.
 
 ## Table of contents
 
